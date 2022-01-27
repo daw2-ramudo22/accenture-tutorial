@@ -12,6 +12,7 @@
             <ComboBox id="products-combobox" items="{/Products}"  selectedKey="{DetailModel/CategoryID}" >
                 <core:Item id="_IDGenItem1" text="{CategoryID}" key="{CategoryID}"/>
             </ComboBox>
+            <Button id="_IDGenButton2" text="Siguiente" press="onNavigateToView2"></Button>
             <Table id="_IDGenTable1" items="{/Products}">
                 <columns>
                     <Column id="_IDGenColumn1" >
