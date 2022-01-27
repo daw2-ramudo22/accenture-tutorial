@@ -9,6 +9,9 @@
   
     <Page id="page" title="{i18n>title}">
         <content>
+            <ComboBox id="products-combobox" items="{/Products}"  selectedKey="{DetailModel/CategoryID}" >
+                <core:Item id="_IDGenItem1" text="{CategoryID}" key="{CategoryID}"/>
+            </ComboBox>
             <Table id="_IDGenTable1" items="{/Products}">
                 <columns>
                     <Column id="_IDGenColumn1" >
