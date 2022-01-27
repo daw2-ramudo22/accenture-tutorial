@@ -1,0 +1,30 @@
+.myHeaderBar{
+    display: flex;
+    justify-content: space-around;
+}
+
+.myComboBoxStyle{
+    width: 100%;
+}
+
+
+.myHeaderBar > div:nth-child(2) {
+    width: 100%;
+}
+
+.myHeaderBar > div{
+    margin: 0 1rem;
+}
+
+.myCustomView section{
+    position: unset !important;
+}
+
+.myCustomIconTabBar .sapMITBSelected .sapMITBContentArrow::after{
+    background: rgb(107, 48, 107);
+}
+
+.myCustomIconTabBar .sapMITBFilter .sapMITBText .sapMITHTextContent{
+    font-weight: bold;
+    color: rgb(107, 48, 107);
+}

@@ -1,0 +1,16 @@
+.myPrimaryBtn > span{
+    background-color: #610091  !important;
+    border: none;
+    color: white  !important;
+}
+
+.myPrimaryBtn:hover > span{
+    background-color: yellow !important;/*!important Da prioridad A ESTA clase antes que las predeterminadas de sap. Le dice al atributo que vaya por encima de cualquier otro atributo (en este caso la de sap)*/
+    border: none;
+    color: black !important;
+}
+
+.myButtonAutorization{
+    display: flex;
+    justify-content: space-around;
+}

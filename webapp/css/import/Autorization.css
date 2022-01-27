@@ -1,0 +1,3 @@
+.sapUiCompFilterBar .sapUiAFLayout .sapUiCompFilterLabel.sapMLabel .sapMLabelTextWrapper::after{
+    content: none;
+}
