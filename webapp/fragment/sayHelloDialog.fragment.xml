@@ -1,0 +1,16 @@
+<core:FragmentDefinition 
+    xmlns="sap.m" 
+    xmlns:core="sap.ui.core" 
+    xmlns:html="http://www.w3.org/1999/xhtml">
+
+<!--Ventana de dialogo que aparece cuando clickamos el boton Hello World. Sale el siguiente texto (etiqueta: Text)-->
+    <Dialog id="_IDGenDialog1" title="{i18n>HelloDialog}">
+        <Text id="_IDGenText1" text="{i18n>Hello} {ToolModel>/name} {i18n>From} {ToolModel>/selectedCity}"></Text>
+<!--Boton para cerar la ventana del dialogo-->
+        <endButton>
+            <Button id="_IDGenButton1" text="Cerrar" press="onClose"></Button>
+        </endButton>
+    </Dialog>
+
+
+</core:FragmentDefinition>
