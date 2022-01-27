@@ -1,0 +1,108 @@
+<mvc:View
+    controllerName="tutorial1.controller.View4"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+
+>  
+    
+        <!--Page id="page" title="{i18n>title}">
+            <content>
+                <form:SimpleForm maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1">
+					<form:content>
+					    <Label design="Bold" text="{i18n>Name}"/>
+						<Text text="{DetailModel>/ProductName}"/>
+						<Label design="Bold" text="{i18n>Price}"/>
+						<Text text="{DetailModel>/UnitPrice}"/>
+						<Label design="Bold" text="{i18n>Category}"/>
+						<Text text="{DetailModel>/CategoryID}"/>
+                        <Label design="Bold" text="Discontinued"/>
+						<Text text="{DetailModel>/Discontinued}"/>
+                        <Label design="Bold" text="{i18n>ProductID}"/>
+						<Text text="{DetailModel>/ProductID}"/>
+					</form:content>
+				</form:SimpleForm>
+            </content>
+        </Page-->
+        <VBox class="sapUiSmallMargin">
+		<f:Form id="FormChange480_12120" editable="true">
+			<f:title>
+				<core:Title text="{i18n>Product}" />
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer title="{i18n>ProductDetails}">
+					<f:formElements>
+						<f:FormElement label="{i18n>ProductName}">
+						    <Text text="{DetailModel>/ProductName}"/>
+						</f:FormElement>
+						<f:FormElement label="{i18n>ProductID}">
+                            <Text text="{DetailModel>/ProductID}"/>
+						</f:FormElement>
+						<f:FormElement label="{i18n>QuantityPerUnit}">
+							<Text text="{DetailModel>/QuantityPerUnit}"/>
+						</f:FormElement>
+						<f:FormElement label="{i18n>ReorderLevel}">
+							<Text text="{DetailModel>/ReorderLevel}"/>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+                <f:FormContainer title="{i18n>Category}">
+					<f:formElements>
+						<f:FormElement label="{i18n>CategoryID}">
+                            <Text text="{DetailModel>/CategoryID}"/>
+						</f:FormElement>
+						<f:FormElement label="{i18n>Discontinued}">
+                            <Text text="{DetailModel>/Discontinued}"/>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<f:Form id="FormChange480_12120-2" editable="true">
+			<f:layout>
+                <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+			</f:layout>
+		</f:Form>
+        <f:Form id="FormChange480_12120-3" editable="true">
+			<f:title>
+				<core:Title text="{i18n>ProductSupplier}" />
+			</f:title>
+			<f:layout>
+                <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer title="{i18n>Supplier}">
+					<f:formElements>
+						<f:FormElement label="{i18n>SupplierID}">
+                            <Text text="{DetailModel>/SupplierID}"/>
+						</f:FormElement>
+						<f:FormElement label="{i18n>Price}">
+                            <Text text="{DetailModel>/UnitPrice}"/>
+						</f:FormElement>
+                        <f:FormElement label="{i18n>UnitsInStock}">
+                            <Text text="{DetailModel>/UnitsInStock}"/>
+						</f:FormElement>
+                        <f:FormElement label="{i18n>UnitsOnOrder}">
+                            <Text text="{DetailModel>/UnitsOnOrder}"/>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+                <f:FormContainer title="{i18n>Image}">
+                    <f:formElements>
+						<f:FormElement>
+                            <Text class="sapUiSmallMarginBottom" />
+				            <Image src="data:image/bmp;base64, {= ${DetailModel>/Category/Picture}.substr(104)}" width="200px" height="170px" press="onPressImage"/>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</mvc:View>

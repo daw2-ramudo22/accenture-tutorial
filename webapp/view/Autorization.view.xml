@@ -1,0 +1,148 @@
+<mvc:View
+    controllerName="tutorial1.controller.Autorization"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+	xmlns:layout="sap.ui.layout"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:vm="sap.ui.comp.variants"
+    height="90%"
+
+>  <App>
+        <f:DynamicPage id="dynamicPageId" headerExpanded="true" showFooter="true">
+            <!-- DynamicPage Title -->
+            <f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<Title text="Autorizaciones"/>
+					</f:heading>
+				</f:DynamicPageTitle>
+			</f:title>
+            <!-- DynamicPage Header -->
+            <f:header>
+				<f:DynamicPageHeader pinnable="true">
+					<f:content>
+						<fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false">
+							<fb:filterItems>
+								<fb:FilterItem name="A" label="Tipo Autorización">
+									<fb:control>
+										<Select id="slName" forceSelection="true" change="onSelectChange" items="{path: '/ProductName'}">
+										    <core:Item key="{key}" text="{name}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>								
+								<fb:FilterItem name="B" label="Estado">
+									<fb:control>
+										<Select
+										id="slCategory"
+										change="onSelectChange"
+										forceSelection="true"
+										items="{
+                                                    path: '/ProductCategories'
+                                                 }">
+										<core:Item key="{key}" text="{name}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>				
+								<fb:FilterItem name="C" label="Empleado">
+									<fb:control>
+										<Select
+										id="slSupplierName"
+										change="onSelectChange"
+										forceSelection="true"
+										items="{
+                                                    path: '/ProductSuppliers'
+                                                }">
+										<core:Item key="{key}" text="{name}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>
+                                <fb:FilterItem name="V" label="Periodo">
+									<fb:control>
+										<Select
+										id="myPeriodoId"
+										change="onSelectChange"
+										forceSelection="true"
+										items="{
+                                                    path: '/ProductSuppliers'
+                                                }">
+										<core:Item key="{DateModel>date}" text="{DateModel>date}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>
+                                <fb:FilterItem name="M">
+									<fb:control>
+										<Select
+										id="myMesId"
+										change="onSelectChange"
+										forceSelection="true"
+										items="{
+                                                    path: 'MonthModel>date'
+                                                }">
+										<core:Item key="{MonthModel>date}" text="{MonthModel>date}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>
+							</fb:filterItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+            <f:content>
+                <Table id="idProductsTable"
+                        sticky="HeaderToolbar,ColumnHeaders"
+                        inset="false"
+                        items="Proof"
+                        class="sapFDynamicPageAlignContent"
+                        width="auto">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Products" level="H2"/>
+                            <ToolbarSpacer />
+                             <Button class="myPrimaryBtn" id="_IDGenButton1" text="{i18n>HelloWorld}" press="onSayHello"></Button>
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column width="auto">
+                            <Text text="Autorizaciones de Tiempos" />
+                        </Column>
+                        <Column minScreenWidth="768px" demandPopin="true" popinDisplay="Inline">
+                            <Text text="Tipo" />
+                        </Column>
+                        <Column minScreenWidth="768px" demandPopin="true" popinDisplay="Inline">
+                            <Text text="Fecha / Hora" />
+                        </Column>
+                        <Column width="auto" hAlign="End">
+                            <Text text="Estado" />
+                        </Column>
+                        <Column minScreenWidth="768px" demandPopin="true" popinDisplay="Inline">
+                            <Text text="Aprobado por" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <ObjectIdentifier title="Alejandro Ramudo"/>
+                                <Text text="Vacaciones" />
+                                <Text text="2/02/2022 14:00 PM" />
+                                <ObjectStatus text="Aprobado" state="Success" />
+                                <Text text="Alejandro Ramudo" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </f:content>
+            <!-- DynamicPage Footer -->
+            <f:footer>
+                <Toolbar>
+                    <Button text="{/messagesLength}" />
+                    <ToolbarSpacer/>
+                    <Button type="Accept" text="Accept"/>
+                    <Button type="Reject" text="Reject"/>
+                </Toolbar>
+            </f:footer>
+        </f:DynamicPage>
+    </App>
+</mvc:View>
